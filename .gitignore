@@ -1,0 +1,5 @@
+.vagrant
+node-token
+argocd-linux-amd64
+get_helm.sh
+kubectl
