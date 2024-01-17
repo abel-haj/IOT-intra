@@ -1,4 +1,4 @@
-.PHONY: p1 p2 p3 bonus clean clean-bonus 
+.PHONY: p1 p2 p3 bonus clean clean-cluster
 
 p1:
 	cd p1 && vagrant up
@@ -15,9 +15,8 @@ bonus:
 clean:	
 	@echo -e "${YELLOW}Cleaning up Kubernetes resources...${ENDCOLOR}"	
 	cd p1 && vagrant destroy -f
-	cd p2 && vagrant destroy -f	
-	k3d cluster delete argocd 1&2> /dev/null
+	cd p2 && vagrant destroy -f
 	@echo -e "${YELLOW}=========================Done===========================${ENDCOLOR}"
 
-clean-bonus:
+clean-cluster:
 	k3d cluster delete argocd
